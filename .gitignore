@@ -1,2 +1,5 @@
 # database files:
 db.sqlite3
+
+# Pycharm files
+__pycache__
