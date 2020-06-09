@@ -21,16 +21,8 @@ class Student(models.Model):
     email = models.EmailField(verbose_name="Email")
     qq = models.CharField(max_length=128, verbose_name="QQ")
     phone = models.CharField(max_length=128, verbose_name="手机号码")
-
     status = models.IntegerField(choices=STATUS_ITEMS, default=0, verbose_name="审核状态")
-
     created_time = models.DateTimeField(auto_now_add=True, editable=False, verbose_name="创建时间")
-
-    def __str__(self):
-        return '<Student: {}>'.format(self.name)
-
-    class Meta:
-        verbose_name = verbose_name_plural = "学员信息"
 
     @property
     def sex_show(self):
@@ -39,3 +31,15 @@ class Student(models.Model):
     @classmethod
     def get_all(cls):
         return cls.objects.all()
+
+    class Meta:
+        verbose_name = verbose_name_plural = "学员信息"
+
+    def __str__(self):
+        return '<Student: {}>'.format(self.name)
+
+
+
+
+
+

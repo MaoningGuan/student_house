@@ -5,6 +5,7 @@ from django.test import TestCase, Client
 
 from .models import Student
 
+
 class StudentTestCase(TestCase):
     def setUp(self):
         Student.objects.create(
@@ -49,7 +50,7 @@ class StudentTestCase(TestCase):
     def test_post_student(self):
         client = Client()
         data = dict(
-            name = 'test_for_post',
+            name='test_for_post',
             sex=1,
             email='333@dd.com',
             profession='程序员',
